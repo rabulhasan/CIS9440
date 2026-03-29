@@ -98,21 +98,21 @@ sources:
           One row per service request.
         columns:
           - name:	approved_for_roadway_seating
-            description: This column indicates whether the application was approved for roadway seating.
+            description: Indicates whether the restaurant was approved for roadway seating.          
           - name:	approved_for_sidewalk_seating
-            description: This column indicates whether the application was approved for sidewalk seating.
+            description: Indicates whether the restaurant was approved for sidewalk seating.
           - name:	bbl
             description: This column contains the Borough, Block, and Lot number for the property.
           - name:	bin
             description: This column contains the Building Identification Number for the property.
           - name:	borough
             description: This column specifies the borough where the restaurant is located.
-          - name:	bulding_number
+          - name:	building_number
             description: This column holds the building number of the restaurant's address.
           - name:	business_address
             description: This column contains the full business address of the restaurant.
           - name:	census_tract
-            description: This column provides the census tract identifier for the restaurant's location.
+            description: the U.S Census Tract where the building is located
           - name:	community_board
             description: This column indicates the community board district for the restaurant.
           - name:	council_district
@@ -120,14 +120,14 @@ sources:
           - name:	doing_business_as_dba
             description: This column contains the "Doing Business As" name of the restaurant.
           - name:	food_service_establishment
-            description: This column indicates if the establishment is a food service establishment.
+            description: The permit number issued to the restaurant by DOHMH.
           - name:	globalid
             description: This column holds a globally unique identifier for the record.
             tests:
               - unique
               - not_null
           - name:	healthcompliance_terms
-            description: This column contains information related to health compliance terms.
+            description: Is the restaurant in compliance with the DOHMH health code.
           - name:	landmark_district_or_building
             description: This column indicates if the location is within a landmark district or is a landmark building.
           - name:	landmarkdistrict_terms
