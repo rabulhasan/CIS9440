@@ -91,5 +91,89 @@ sources:
             description: Nearby landmark or point of interest
 
 
+  - name: raw
+    description: Raw data loaded from NYC Open Data
+    database: rabiulhasan-cis-9440-g2
+    schema: nyc_hw3_raw_data
+    tables:
+      - name: source_nyc_open_restaurant_apps
+        description: |
+          NYC Open Restaurant Applications.
+          One row per service request.
+        columns:
+          - name:	approved_for_roadway_seating
+            description: This column indicates whether the application was approved for roadway seating.
+          - name:	approved_for_sidewalk_seating
+            description: This column indicates whether the application was approved for sidewalk seating.
+          - name:	bbl
+            description: This column contains the Borough, Block, and Lot number for the property.
+          - name:	bin
+            description: This column contains the Building Identification Number for the property.
+          - name:	borough
+            description: This column specifies the borough where the restaurant is located.
+          - name:	bulding_number
+            description: This column holds the building number of the restaurant's address.
+          - name:	business_address
+            description: This column contains the full business address of the restaurant.
+          - name:	census_tract
+            description: This column provides the census tract identifier for the restaurant's location.
+          - name:	community_board
+            description: This column indicates the community board district for the restaurant.
+          - name:	council_district
+            description: This column specifies the council district for the restaurant's location.
+          - name:	doing_business_as_dba
+            description: This column contains the "Doing Business As" name of the restaurant.
+          - name:	food_service_establishment
+            description: This column indicates if the establishment is a food service establishment.
+          - name:	globalid
+            description: This column holds a globally unique identifier for the record.
+            tests:
+              - unique
+              - not_null
+          - name:	healthcompliance_terms
+            description: This column contains information related to health compliance terms.
+          - name:	landmark_district_or_building
+            description: This column indicates if the location is within a landmark district or is a landmark building.
+          - name:	landmarkdistrict_terms
+            description: This column contains information related to landmark district terms.
+          - name:	latitude
+            description: This column stores the latitude coordinate of the restaurant's location.
+          - name:	legal_business_name
+            description: This column contains the legal business name of the restaurant.
+          - name:	longitude
+            description: This column stores the longitude coordinate of the restaurant's location.
+          - name:	nta
+            description: This column provides the Neighborhood Tabulation Area for the restaurant's location.
+          - name:	objectid
+            description: This column holds a unique object identifier for the record.
+          - name:	qualify_alcohol
+            description: This column indicates if the establishment qualifies for alcohol service.
+          - name:	restaurant_name
+            description: This column contains the name of the restaurant.
+          - name:	roadway_dimensions_area
+            description: This column specifies the area of the proposed roadway seating.
+          - name:	roadway_dimensions_length
+            description: This column specifies the length of the proposed roadway seating.
+          - name:	roadway_dimensions_width
+            description: This column specifies the width of the proposed roadway seating.
+          - name:	seating_interest_sidewalk
+            description: This column indicates interest in sidewalk seating.
+          - name:	sidewalk_dimensions_area
+            description: This column specifies the area of the proposed sidewalk seating.
+          - name:	sidewalk_dimensions_length
+            description: This column specifies the length of the proposed sidewalk seating.
+          - name:	sidewalk_dimensions_width
+            description: This column specifies the width of the proposed sidewalk seating.
+          - name:	sla_license_type
+            description: This column contains the type of State Liquor Authority license.
+          - name:	sla_serial_number
+            description: This column contains the serial number of the State Liquor Authority license.
+          - name:	street
+            description: This column holds the street name of the restaurant's address.
+          - name:	time_of_submission
+            description: This column contains the timestamp of when the application was submitted.
+          - name:	zip
+            description: This column contains the zip code of the restaurant's address.
+
 
 
