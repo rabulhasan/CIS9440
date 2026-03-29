@@ -107,7 +107,7 @@ sources:
             description: This column contains the Building Identification Number for the property.
           - name:	borough
             description: This column specifies the borough where the restaurant is located.
-          - name:	building_number
+          - name:	bulding_number
             description: This column holds the building number of the restaurant's address.
           - name:	business_address
             description: This column contains the full business address of the restaurant.
