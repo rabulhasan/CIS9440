@@ -91,11 +91,7 @@ sources:
             description: Nearby landmark or point of interest
 
 
-  - name: raw
-    description: Raw data loaded from NYC Open Data
-    database: rabiulhasan-cis-9440-g2
-    schema: nyc_hw3_raw_data
-    tables:
+
       - name: source_nyc_open_restaurant_apps
         description: |
           NYC Open Restaurant Applications.
