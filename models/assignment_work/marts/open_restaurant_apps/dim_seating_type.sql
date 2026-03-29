@@ -2,14 +2,14 @@
 WITH seating_types AS (
    SELECT DISTINCT
        seating_interest_sidewalk AS seating_interest,
-       CASE
-       WHEN LOWER(TRIM(approved_for_sidewalk_seating)) = 'yes' THEN TRUE 
-           ELSE FALSE 
-       END AS approved_for_sidewalk,  
        CASE 
-           WHEN LOWER(TRIM(approved_for_roadway_seating)) = 'yes' THEN TRUE 
+           WHEN is_sidewalk_approved = TRUE THEN TRUE 
            ELSE FALSE 
-       END AS approved_for_roadway    
+       END AS approved_for_sidewalk,
+       CASE 
+           WHEN is_roadway_approved = TRUE THEN TRUE 
+           ELSE FALSE 
+       END AS approved_for_roadway   
 --Replaced with a CASE WHEN .. statement that handles the different possibilities for approved_for_sidewalk_seating and approved_for_roadway_seating in the data
 --NOTE: The final result we want to select here is two boolean columns (TRUE or FALSE values in them), one column approved_for_sidewalk (TRUE or FALSE value), and one column approved_for_roadway
    FROM {{ ref('stg_nyc_open_restaurant_apps') }} -- reference the appropriate staging table!
