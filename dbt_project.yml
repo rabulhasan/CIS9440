@@ -38,3 +38,21 @@ models:
 
        dot_311:
          +materialized: table
+    
+   project_work:
+     staging:
+       +materialized: table
+       +schema: nyc_illegal_parking_staging
+
+     marts:
+       +materialized: table
+       +schema: nyc_illegal_parking_marts
+      
+       shared:
+         +materialized: table
+
+       open_restaurant_apps:
+         +materialized: table
+
+       dot_311:
+         +materialized: table       
