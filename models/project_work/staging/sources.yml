@@ -15,11 +15,11 @@ sources:
               - unique
               - not_null
           - name: bus_stop_georeference
-            description: Date and time the request was created
+            description: Bus stop location.
           - name: bus_stop_latitude
-            description: Date and time the request was closed
+            description: Latitude for the bus stop.
           - name: bus_stop_longitude
-            description: Agency code
+            description: Longitude for the bus stop.
           - name: first_occurrence
             description: Datetime of the first occurrence captured by the first bus.
           - name: last_occurrence
@@ -31,7 +31,7 @@ sources:
           - name: vehicle_id
             description: Hashed license plate number for the vehicle in violation. Can be used to identify repeat violators.
           - name: violation_georeference
-            description: Zip code of the incident location
+            description: Geo point of the incident location
           - name: violation_id
             description: Street address of the incident
           - name: violation_latitude
