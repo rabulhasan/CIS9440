@@ -13,6 +13,17 @@ cleaned AS (
         CAST(vehicle_id AS STRING) AS vehicle_id,
         CAST(stop_id AS STRING) AS stop_id,
 
+        -- Borough extraction based on bus_route_id prefix
+        CASE 
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'BX') THEN 'Bronx'
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'B') THEN 'Brooklyn'
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'M') THEN 'Manhattan'
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'Q') THEN 'Queens'
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'S') THEN 'Staten Island'
+            WHEN STARTS_WITH(UPPER(TRIM(bus_route_id)), 'X') THEN 'Express' -- Cross-borough express
+            ELSE 'Unknown'
+        END AS borough,
+
         -- Timestamps
         CAST(first_occurrence AS TIMESTAMP) AS first_occurrence_at,
         CAST(last_occurrence AS TIMESTAMP) AS last_occurrence_at,
