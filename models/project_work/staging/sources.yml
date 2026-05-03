@@ -129,3 +129,55 @@ sources:
             description: Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC).
 
 
+      - name: source_MTA_Bus_Route_Segment
+        description: |
+          provides data on how fast buses are traveling between pairs of subsequent timepoints (the major stops on a bus route) for every bus route in the system.
+        columns:
+          - name:	year
+            description: The year for the data.
+          - name:	month
+            description: The month bus speeds are being aggregated to.
+          - name:	timestamp
+            description: Timestamp of the year, month, hour of week the data represents in a MM/DD/YYY HH:MM:SS AM/PM format.
+          - name:	day_of_week
+            description: The day of the week bus speeds are being aggregated to.
+          - name:	hour_of_day
+            description:  The hour the data is being aggregated to (0 to 23). 
+          - name:	route_id
+            description: The individual bus route. 
+          - name:	direction
+            description:    The direction of service (N, S, E, W).   
+          - name:	borough
+            description: The borough of which the bus route services.
+          - name:	route_type
+            description: The type of bus service provided Express, Local, Limited, SBS (Select Bus Service) etc.
+          - name:	stop_order
+            description: The stop sequence order of the first timepoint of the pair.
+          - name:	timepoint_stop_id
+            description:   The stop id of the first of a pair of timepoint bus stops bus speeds are being measured between. 
+          - name:	timepoint_stop_name
+            description: The name of the first of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	timepoint_stop_latitude
+            description:   The latitude of the first of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	timepoint_stop_longitude
+            description: The longitude of the first of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	next_timepoint_stop_id
+            description:    The stop id of the second of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	next_timepoint_stop_name
+            description: The name of the second of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	next_timepoint_stop_latitude
+            description:  The latitude of the second of a pair of timepoint bus stops bus speeds are being measured between. 
+          - name:	next_timepoint_stop_longitude
+            description: The longitude of the second of a pair of timepoint bus stops bus speeds are being measured between.
+          - name:	road_distance
+            description:  The roadway distance in miles between the pair of timepoint bus stops.
+          - name:	average_travel_time
+            description:  The average travel time in minutes for all bus trips on a bus route between the pair of subsequent timepoint bus stops for a particular hour of day
+          - name:	average_road_speed
+            description:  The average speed in miles per hour for all bus trips on a bus route between the pair of subsequent timepoint bus stops for a particular hour of day,
+          - name:	bus_trip_count
+            description: The number of bus trips on the specific bus route between the pair of subsequent timepoint bus stops for a particular hour of day, day of week, and month.
+          - name:	timepoint_stop_georeference
+            description: Open Data platform-generated geocoding information from supplied 'Timepoint Stop' address components. 
+          - name:	next_timepoint_stop_georeference
+            description: Open Data platform-generated geocoding information from supplied 'Next Timepoint Stop' address components.
