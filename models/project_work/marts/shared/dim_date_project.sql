@@ -1,4 +1,4 @@
--- models/project_work/marts/dim_date_project.sql
+-- models/project_work/marts/shared/dim_date_project.sql
 {{ config(materialized='table') }}
 
 WITH all_dates AS (
@@ -12,6 +12,13 @@ WITH all_dates AS (
     SELECT DISTINCT CAST(first_occurrence_at AS DATE) AS full_date
     FROM {{ ref('stg_mta_ace_violations') }}
     WHERE first_occurrence_at IS NOT NULL
+
+    UNION DISTINCT
+
+    -- Updated to match your current staging column name: 'timestamp'
+    SELECT DISTINCT CAST(timestamp AS DATE) AS full_date
+    FROM {{ ref('stg_MTA_Bus_Route_Segment') }} 
+    WHERE timestamp IS NOT NULL
 ),
 
 date_dimension AS (
