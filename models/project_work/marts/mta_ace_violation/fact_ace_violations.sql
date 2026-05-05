@@ -7,11 +7,10 @@ WITH source_data AS (
         CAST(first_occurrence_at AS DATE) AS violation_date,
         first_occurrence_at,
         last_occurrence_at,
-        bus_route_id,  -- Corrected from route_id
-        stop_id,       -- Corrected from bus_stop_id
+        bus_route_id, 
+        stop_id,       
         violation_type,
         borough,
-        -- zip_code removed because it doesn't exist in your staging table
         violation_latitude,
         violation_longitude
     FROM {{ ref('stg_mta_ace_violations') }}
@@ -39,11 +38,11 @@ joined AS (
 
     FROM source_data s
 
-    LEFT JOIN {{ ref('dim_date_project') }} d  -- Ensure this ref name is correct
+    LEFT JOIN {{ ref('dim_date_project') }} d  
         ON s.violation_date = d.full_date
 
     LEFT JOIN {{ ref('dim_location_project') }} l
-        -- Important: Join only on Borough as MTA data lacks Zip Code
+       
         ON UPPER(TRIM(s.borough)) = l.borough 
 
     LEFT JOIN {{ ref('dim_ace_violation_type') }} vt
