@@ -42,7 +42,7 @@ joined AS (
     LEFT JOIN {{ ref('dim_date_project') }} d  -- Ensure this ref name is correct
         ON s.violation_date = d.full_date
 
-    LEFT JOIN {{ ref('dim_location') }} l
+    LEFT JOIN {{ ref('dim_location_project') }} l
         -- Important: Join only on Borough as MTA data lacks Zip Code
         ON UPPER(TRIM(s.borough)) = l.borough 
 

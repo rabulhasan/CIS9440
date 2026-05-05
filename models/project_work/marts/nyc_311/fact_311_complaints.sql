@@ -35,7 +35,7 @@ joined AS (
     LEFT JOIN {{ ref('dim_date_project') }} d 
         ON s.complaint_date = d.full_date
 
-    LEFT JOIN {{ ref('dim_location') }} l
+    LEFT JOIN {{ ref('dim_location_project') }} l
        
         ON UPPER(TRIM(s.borough)) = l.borough 
 
