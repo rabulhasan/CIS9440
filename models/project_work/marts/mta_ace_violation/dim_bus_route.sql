@@ -4,15 +4,14 @@
 WITH routes AS (
 
     SELECT DISTINCT
-        route_id AS bus_route_id,
-        agency_name
+        route_id AS bus_route_id
+    
     FROM {{ ref('stg_mta_ace_violations') }}
-    WHERE route_id IS NOT NULL
+    WHERE bus_route_id IS NOT NULL
 
 )
 
 SELECT
-    {{ dbt_utils.generate_surrogate_key(['bus_route_id', 'agency_name']) }} AS route_key,
-    bus_route_id,
-    agency_name
+    {{ dbt_utils.generate_surrogate_key(['bus_route_id']) }} AS route_key,
+    bus_route_id
 FROM routes
