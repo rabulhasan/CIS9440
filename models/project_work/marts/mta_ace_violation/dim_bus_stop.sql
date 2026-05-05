@@ -2,8 +2,8 @@
 {{ config(materialized='table') }}
 
 SELECT DISTINCT
-    bus_stop_id,
+    
     stop_id,
     stop_name
 FROM {{ ref('stg_mta_ace_violations') }}
-WHERE bus_stop_id IS NOT NULL
+WHERE stop_id IS NOT NULL
